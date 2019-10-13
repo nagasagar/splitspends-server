@@ -43,11 +43,20 @@ public class Expense {
     @Column(nullable = false)
     private int amount;
     
-    @OneToMany(mappedBy="expense", orphanRemoval = true,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="expense",fetch=FetchType.EAGER, cascade=CascadeType.ALL)
     private Set<Payment> payments= new HashSet<Payment>();
     
-    @OneToMany(mappedBy="expense",orphanRemoval = true,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="expense",fetch=FetchType.EAGER, cascade=CascadeType.ALL)
     private Set<Share> shares= new HashSet<Share>();
+    
+    public Expense() {
+	// No-Arg Constructor
+    }
+    
+    public Expense(Expense e) {
+	this.detail = e.detail;
+	this.amount = e.amount;
+    }
     
     public Long getId() {
         return id;
@@ -112,6 +121,14 @@ public class Expense {
 
     public void removeShare(Share share) {
 	shares.remove(share);
+    }
+    
+    public void setPayments(Set<Payment> payments) {
+	this.payments = payments;
+    }
+    
+    public void setShares(Set<Share> shares) {
+	this.shares = shares;
     }
     
     

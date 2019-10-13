@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -22,7 +23,7 @@ public class Share {
     
     @ManyToOne(optional=false)
     @JoinColumn(name = "SPENDER_ID")
-    @JsonIgnoreProperties({"email","imageUrl","emailVerified","provider"})
+    @JsonIgnoreProperties({"name","imageUrl","emailVerified","provider"})
     private User spender;
     
     @Column(nullable = false)
@@ -30,7 +31,7 @@ public class Share {
     
     @ManyToOne(optional=false)
     @JoinColumn(name = "EXPENSE_ID")
-    @JsonIgnoreProperties({"payments","shares","group"})
+    @JsonIgnore
     private Expense expense;
 
     public Long getId() {
