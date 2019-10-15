@@ -193,7 +193,9 @@ public class ExpenseController {
 	for (Payment p : expense.getPayments()) {
 	    if (validPayees.contains(p.getPayee())) {
 		continue;
-	    } else {
+	    } else if (p.getPayee().equals(currentUser)){
+		continue;
+	    }else {
 		return false;
 	    }
 	}
@@ -213,6 +215,8 @@ public class ExpenseController {
 
 	for (Share s : expense.getShares()) {
 	    if (validSpenders.contains(s.getSpender())) {
+		continue;
+	    } else if (s.getSpender().equals(currentUser)){
 		continue;
 	    } else {
 		return false;
