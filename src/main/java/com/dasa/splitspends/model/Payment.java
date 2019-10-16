@@ -23,7 +23,7 @@ public class Payment {
     
     @ManyToOne(optional=false)
     @JoinColumn(name = "PAYEE_ID")
-    @JsonIgnoreProperties({"name","imageUrl","emailVerified","provider"})
+    @JsonIgnoreProperties({"imageUrl","emailVerified","provider"})
     private User payee;
     
     @Column(nullable = false)

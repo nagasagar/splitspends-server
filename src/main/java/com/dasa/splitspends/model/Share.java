@@ -23,7 +23,7 @@ public class Share {
     
     @ManyToOne(optional=false)
     @JoinColumn(name = "SPENDER_ID")
-    @JsonIgnoreProperties({"name","imageUrl","emailVerified","provider"})
+    @JsonIgnoreProperties({"imageUrl","emailVerified","provider"})
     private User spender;
     
     @Column(nullable = false)
