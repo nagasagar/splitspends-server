@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,39 +62,12 @@ public class ExpenseController {
 	return expenseRepository.findExpensesOfuser(user.getId());
     }
 
-    @GetMapping("/expenses/test")
-    public Expense getSampleExpense() {
-	Expense expense = new Expense();
-	expense.setDetail("mysore expense");
-	expense.setAmount(10);
-	expense.setAuthor(userRepository.getOne((long) 5));
-	expense.setGroup(groupRepository.getOne((long) 5));
-	expense = expenseRepository.save(expense);
-
-	Payment payment = new Payment();
-	payment.setPayee(userRepository.getOne((long) 5));
-	payment.setAmount(10);
-	payment.setExpense(expense);
-	payment = paymentRepository.save(payment);
-	expense.getPayments().add(payment);
-	expense = expenseRepository.save(expense);
-
-	Share share1 = new Share();
-	share1.setSpender(userRepository.getOne((long) 4));
-	share1.setAmount(5);
-	share1.setExpense(expense);
-	share1 = shareRepository.save(share1);
-	expense.addShare(share1);
-
-	Share share2 = new Share();
-	share2.setSpender(userRepository.getOne((long) 5));
-	share2.setAmount(5);
-	share2.setExpense(expense);
-	share2 = shareRepository.save(share2);
-	expense.addShare(share2);
-
-	return expenseRepository.save(expense);
-
+    @DeleteMapping("/expenses/{expenseId}")
+    public void deleteExpenseByID(@PathVariable long expenseId) {
+	Expense expense = expenseRepository.findById(expenseId)
+		.orElseThrow(() -> new ResourceNotFoundException("Group", "id", expenseId));
+	
+	expenseRepository.delete(expense);
     }
 
     @PostMapping("/expenses")
