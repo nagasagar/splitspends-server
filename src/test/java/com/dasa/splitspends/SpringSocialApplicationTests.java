@@ -1,4 +1,4 @@
-package com.example.springsocial;
+package com.dasa.splitspends;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

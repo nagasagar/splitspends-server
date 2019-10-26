@@ -3,7 +3,6 @@ package com.dasa.splitspends.controller;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -159,7 +158,7 @@ public class ExpenseController {
 	Collection<User> validPayees;
 	Group grp = expense.getGroup();
 	if (grp == null) {
-	    validPayees = userRepository.getFriendsOfuser(currentUser.getId());
+	    validPayees = userRepository.findFriendsOfuser(currentUser.getId());
 	} else {
 	    Group expenseGroup = groupRepository.findById(grp.getId())
 		    .orElseThrow(() -> new ResourceNotFoundException("Group", "id", grp.getId()));
@@ -182,7 +181,7 @@ public class ExpenseController {
 	Collection<User> validSpenders;
 	Group grp = expense.getGroup();
 	if (grp == null) {
-	    validSpenders = userRepository.getFriendsOfuser(currentUser.getId());
+	    validSpenders = userRepository.findFriendsOfuser(currentUser.getId());
 	} else {
 	    Group expenseGroup = groupRepository.findById(grp.getId())
 		    .orElseThrow(() -> new ResourceNotFoundException("Group", "id", grp.getId()));

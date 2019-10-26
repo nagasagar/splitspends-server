@@ -39,7 +39,7 @@ public class UserController {
     
     @GetMapping("/users/email")
     @PreAuthorize("hasRole('USER')")
-    public User getUserById(@RequestParam String email) {
+    public User getUserByEmail(@RequestParam String email) {
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User", "email", email));
     }
@@ -50,10 +50,10 @@ public class UserController {
         User user = userRepository.findById(userPrincipal.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
        
-        return  userRepository.getFriendsOfuser(user.getId());
+        return  userRepository.findFriendsOfuser(user.getId());
     }
     
-    @PostMapping("/friends/addfriend")
+    @PostMapping("/addfriend")
     public void addFriendToUser(@CurrentUser UserPrincipal userPrincipal,@RequestBody User friend) {
 	 User user = userRepository.findById(userPrincipal.getId())
 	                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
@@ -64,7 +64,7 @@ public class UserController {
         userRepository.save(user);
     }
     
-    @PostMapping("/friends/removefriend")
+    @PostMapping("/removefriend")
     public void removeFriendToUser(@CurrentUser UserPrincipal userPrincipal,@RequestBody User friend) {
 	 User user = userRepository.findById(userPrincipal.getId())
 	                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));

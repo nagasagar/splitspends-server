@@ -18,13 +18,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Boolean existsByEmail(String email);
 
     @Query("select u from User u where u.name = :name")
-    Optional<User> findByNameCustomQuery(@Param("name") String name);
+    List<User> findByName(@Param("name") String name);
 
     final String FIND_FRIENDS_SQL = "select * from users where " + "id in "
 	    + "(select friend_id from friends where user_id = :searchID " + "union "
 	    + "select user_id from friends where friend_id = :searchID);";
 
     @Query(value = FIND_FRIENDS_SQL, nativeQuery = true)
-    List<User> getFriendsOfuser(@Param("searchID") Long id);
+    List<User> findFriendsOfuser(@Param("searchID") Long id);
 
 }

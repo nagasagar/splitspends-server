@@ -1,4 +1,4 @@
-package com.example.springsocial.controller;
+package com.dasa.splitspends.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,14 +13,14 @@ import com.dasa.splitspends.repository.UserRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes= {SpringSocialApplication.class, DBConfiguration.class})
-@ActiveProfiles("mvc")
+@ActiveProfiles("web")
 public class UserControllerTests {
     
     	@Autowired
     	UserRepository userRepository;
 
 	@Test
-	public void contextLoads() {
+	public void getAllUsers() {
 	    System.out.println(userRepository.findAll().size());
 	}
 
