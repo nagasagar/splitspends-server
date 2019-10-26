@@ -43,10 +43,10 @@ public class Expense {
     @Column(nullable = false)
     private int amount;
     
-    @OneToMany(mappedBy="expense",fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="expense",fetch=FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval = true)
     private Set<Payment> payments= new HashSet<Payment>();
     
-    @OneToMany(mappedBy="expense",fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="expense",fetch=FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval = true)
     private Set<Share> shares= new HashSet<Share>();
     
     public Expense() {
@@ -122,15 +122,5 @@ public class Expense {
     public void removeShare(Share share) {
 	shares.remove(share);
     }
-    
-    public void setPayments(Set<Payment> payments) {
-	this.payments = payments;
-    }
-    
-    public void setShares(Set<Share> shares) {
-	this.shares = shares;
-    }
-    
-    
 
 }

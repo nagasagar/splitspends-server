@@ -29,7 +29,7 @@ public class Payment {
     @Column(nullable = false)
     private int amount;
     
-    @ManyToOne(optional=false,fetch = FetchType.EAGER)
+    @ManyToOne(optional=false)
     @JoinColumn(name = "EXPENSE_ID")
     @JsonIgnore
     private Expense expense;

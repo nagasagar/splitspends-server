@@ -93,6 +93,8 @@ public class ExpenseController {
 	    targetExpense = expenseRepository.findById(expenseId)
 		    .orElseThrow(() -> new ResourceNotFoundException("Expense", "id", expenseId));
 	    targetExpense.setAuthor(usr);
+	    targetExpense.getPayments().clear();
+	    targetExpense.getShares().clear();
 	} else {
 	    Expense newExpense = new Expense(expense);
 	    newExpense.setAuthor(usr);
@@ -114,7 +116,7 @@ public class ExpenseController {
 	    }
 	    
 	}
-	targetExpense.setPayments(payments);
+	targetExpense.getPayments().addAll(payments);
 	Set<Share> shares = new HashSet<Share>();
 	for(Share s: expense.getShares()) {
 	    if(s.getId()==null) {
@@ -127,7 +129,7 @@ public class ExpenseController {
 		shares.add(shareRepository.save(s));
 	    }
 	}
-	targetExpense.setShares(shares);
+	targetExpense.getShares().addAll(shares);
 	return expenseRepository.save(targetExpense);
 
     }
