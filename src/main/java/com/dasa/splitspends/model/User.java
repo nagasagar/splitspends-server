@@ -153,6 +153,10 @@ public class User {
     public boolean removeFriend(User friend) {
 	return this.friends.remove(friend);
     }
+    
+    public boolean removeMate(User friend) {
+	return this.mates.remove(friend);
+    }
 
     @Override
     public boolean equals(Object o) {

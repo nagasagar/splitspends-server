@@ -2,7 +2,9 @@ package com.dasa.splitspends.controller;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -13,6 +15,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -91,22 +94,44 @@ public class UserControllerMockTests {
         f.setId(2l);
         f.setEmail("somefriend@anything.com");
         userController.addFriendToUser(UserPrincipal.create(u),f);
-        u.addFriend(f);
-        verify(userRepository).save(u);
+        ArgumentCaptor<User> captor = ArgumentCaptor.forClass(User.class);
+        verify(userRepository).save(captor.capture());
+        User argument = captor.getValue();
+        assertTrue(argument.getFriends().contains(f));
         
     }
     
     @Test
-    public void testremoveFriendFromUser() {
-	
-        when(userRepository.findById(1l)).thenReturn(Optional.of(u));
+    public void testremoveFriendFromUserDirect() {
 	User f = new User();
         f.setId(2l);
         f.setEmail("somefriend@anything.com");
         u.addFriend(f);
+        when(userRepository.findById(1l)).thenReturn(Optional.of(u));
+        when(userRepository.findById(2l)).thenReturn(Optional.of(f));
+	
         userController.removeFriendToUser(UserPrincipal.create(u),f);
-        u.removeFriend(f);
-        verify(userRepository).save(u);
+        ArgumentCaptor<User> captor = ArgumentCaptor.forClass(User.class);
+        verify(userRepository).save(captor.capture());
+        User argument = captor.getValue();
+        assertFalse(argument.getFriends().contains(f));
+        
+    }
+    
+    @Test
+    public void testremoveFriendFromUserReverse() {
+	User f = new User();
+        f.setId(2l);
+        f.setEmail("somefriend@anything.com");
+        f.addFriend(u);
+        when(userRepository.findById(1l)).thenReturn(Optional.of(u));
+        when(userRepository.findById(2l)).thenReturn(Optional.of(f));
+	
+        userController.removeFriendToUser(UserPrincipal.create(u),f);
+        ArgumentCaptor<User> captor = ArgumentCaptor.forClass(User.class);
+        verify(userRepository).save(captor.capture());
+        User argument = captor.getValue();
+        assertFalse(argument.getFriends().contains(f));
         
     }
 

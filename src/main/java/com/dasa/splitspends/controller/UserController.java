@@ -68,8 +68,15 @@ public class UserController {
     public void removeFriendToUser(@CurrentUser UserPrincipal userPrincipal,@RequestBody User friend) {
 	 User user = userRepository.findById(userPrincipal.getId())
 	                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
-        user.removeFriend(friend);
-        userRepository.save(user);
+	 User found = userRepository.findById(friend.getId())
+	                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
+        if(user.removeFriend(friend)) {
+            userRepository.save(user);
+        }else {
+            found.removeFriend(user);
+            userRepository.save(found);
+        }
+        
     }
 
 }

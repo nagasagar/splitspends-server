@@ -1,0 +1,26 @@
+[ 
+   { 
+      "id":1002,
+      "name":"nsagar",
+      "email":"nsagar@gmail.com",
+      "imageUrl":null,
+      "emailVerified":false,
+      "provider":"local"
+   },
+   { 
+      "id":1003,
+      "name":"sirimm",
+      "email":"sirimm@gmail.com",
+      "imageUrl":null,
+      "emailVerified":false,
+      "provider":"local"
+   },
+   { 
+      "id":1007,
+      "name":"shaurya",
+      "email":"shaurya@gmail.com",
+      "imageUrl":null,
+      "emailVerified":false,
+      "provider":"local"
+   }
+]
