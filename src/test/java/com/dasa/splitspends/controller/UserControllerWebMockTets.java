@@ -29,17 +29,18 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 
 import com.dasa.splitspends.controller.UserController;
 import com.dasa.splitspends.model.User;
+import com.dasa.splitspends.repository.GroupRepository;
 import com.dasa.splitspends.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -53,8 +54,11 @@ public class UserControllerWebMockTets {
     @Autowired
     private MockMvc mvc;
 
-    @MockBean
+    @Autowired
     private UserRepository userRepository;
+    
+    @Mock
+    private GroupRepository groupRepository;
     
     @Autowired
     ObjectMapper objectMapper;
@@ -70,9 +74,9 @@ public class UserControllerWebMockTets {
     @Before
     public void setUp() {
 	alexa = createUser(101l,"alexa@gmail.com","alex","P@55W0rd");
-	siri = createUser(101l,"siri@gmail.com","siri","P@55W0rd");
-	google = createUser(101l,"google@gmail.com","google","P@55W0rd");
-	bixby = createUser(101l,"bixby@gmail.com","bixby","P@55W0rd");
+	siri = createUser(102l,"siri@gmail.com","siri","P@55W0rd");
+	google = createUser(103l,"google@gmail.com","google","P@55W0rd");
+	bixby = createUser(104l,"bixby@gmail.com","bixby","P@55W0rd");
 	
     }
     

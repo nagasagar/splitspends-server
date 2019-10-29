@@ -1,7 +1,6 @@
 package com.dasa.splitspends.controller;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
@@ -9,11 +8,8 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
 
-import org.assertj.core.util.Arrays;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,7 +19,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.internal.util.collections.Sets;
 
 import com.dasa.splitspends.model.Group;
 import com.dasa.splitspends.model.User;
@@ -83,25 +78,6 @@ public class GroupControllerMockTests {
         Group argument = captor.getValue();
         assertTrue(argument.equals(g));
     }
-       
-    @Test
-    public void testCreateNewGroup() {
-        when(userRepository.findById(1l)).thenReturn(Optional.of(u));
-        User m = new User();
-        m.setId(2l);
-        Group newg = new Group();
-        newg.addMember(m);
-        groupController.createNewGroup(UserPrincipal.create(u),newg);
-        verify(userRepository).findById(1l);
-        ArgumentCaptor<Group> captor = ArgumentCaptor.forClass(Group.class);
-        verify(groupRepository).save(captor.capture());
-        Group argument = captor.getValue();
-        assertTrue(argument.getMembers().size()==2);
-        assertTrue(argument.getMembers().contains(u));
-        assertTrue(argument.getMembers().contains(m));
-    }
-    
-
  
     @Test
     public void testaddMemberToGroup() {

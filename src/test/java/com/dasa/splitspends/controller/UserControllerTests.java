@@ -2,7 +2,6 @@ package com.dasa.splitspends.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -16,71 +15,22 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.hasSize;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
-import org.springframework.boot.json.JacksonJsonParser;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.util.StreamUtils;
 
-import com.dasa.splitspends.SpringSocialApplication;
-import com.dasa.splitspends.config.DBConfiguration;
-import com.dasa.splitspends.payload.LoginRequest;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = { SpringSocialApplication.class, DBConfiguration.class })
-@ActiveProfiles("web")
-@AutoConfigureMockMvc
-public class UserControllerTests {
-
-    @Autowired
-    private MockMvc mvc;
-
-    @Autowired
-    ObjectMapper objectMapper;
+public class UserControllerTests extends BaseControllerTest{
 
     @Value("classpath:nsahas_friends.json")
     private Resource nsahasFriendsResource;
 
-    private String jwt;
-
-    @Before
-    public void steUp() throws Exception {
-	jwt = obtainAccessToken("nsahas@gmail.com", "splitspends");
-    }
-
-    private String obtainAccessToken(String email, String password) throws Exception {
-
-	LoginRequest loginRequest = new LoginRequest();
-	loginRequest.setEmail(email);
-	loginRequest.setPassword(password);
-
-	ResultActions result = mvc
-		.perform(post("/auth/login").contentType(MediaType.APPLICATION_JSON)
-			.content(objectMapper.writeValueAsString(loginRequest))
-			.accept("application/json;charset=UTF-8"))
-		.andDo(print()).andExpect(status().isOk())
-		.andExpect(content().contentType("application/json;charset=UTF-8"));
-
-	String resultString = result.andReturn().getResponse().getContentAsString();
-
-	JacksonJsonParser jsonParser = new JacksonJsonParser();
-	return jsonParser.parseMap(resultString).get("accessToken").toString();
-    }
+    
 
     @Test
     public void testGetCurrentUser() throws Exception {

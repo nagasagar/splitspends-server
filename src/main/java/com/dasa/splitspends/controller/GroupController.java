@@ -1,19 +1,22 @@
 package com.dasa.splitspends.controller;
 
-import java.util.Optional;
+import java.net.URI;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.dasa.splitspends.exception.ResourceNotFoundException;
 import com.dasa.splitspends.model.Group;
 import com.dasa.splitspends.model.User;
+import com.dasa.splitspends.payload.ApiResponse;
 import com.dasa.splitspends.repository.GroupRepository;
 import com.dasa.splitspends.repository.UserRepository;
 import com.dasa.splitspends.security.CurrentUser;
@@ -53,10 +56,14 @@ public class GroupController {
     }
     
     @PostMapping("/groups")
-    public void createNewGroup(@CurrentUser UserPrincipal userPrincipal, @RequestBody Group group) {
+    public ResponseEntity<?> createNewGroup(@CurrentUser UserPrincipal userPrincipal, @RequestBody Group group) {
 	if(group.getId()!=null) {
 	    //TODO group already exists
-	    // edit the group
+		URI location = ServletUriComponentsBuilder
+                .fromCurrentContextPath().path("/groups/{id}")
+                .buildAndExpand(group.getId()).toUri();
+		 return ResponseEntity.created(location)
+	                .body(new ApiResponse(true, "User registered successfully"));
 	}else {
 	    Group newGroup = new Group();
 	    newGroup.setName(group.getName());
@@ -66,7 +73,14 @@ public class GroupController {
 	    for (User user : group.getMembers()) {
 		newGroup.addMember(user);
 	    }
-	    groupRepository.save(newGroup);
+	    Group result =groupRepository.save(newGroup);
+	    
+	    URI location = ServletUriComponentsBuilder
+                .fromCurrentContextPath().path("/groups/{id}")
+                .buildAndExpand(result.getId()).toUri();
+
+        return ResponseEntity.created(location)
+                .body(new ApiResponse(true, "Group created successfully"));
 	}
 	
     }
