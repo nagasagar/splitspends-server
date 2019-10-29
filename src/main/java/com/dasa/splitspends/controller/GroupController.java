@@ -54,8 +54,7 @@ public class GroupController {
     
     @PostMapping("/groups")
     public void createNewGroup(@CurrentUser UserPrincipal userPrincipal, @RequestBody Group group) {
-	Optional<Group> grp = groupRepository.findById(group.getId());
-	if(grp.isPresent()) {
+	if(group.getId()!=null) {
 	    //TODO group already exists
 	    // edit the group
 	}else {
