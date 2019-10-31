@@ -25,7 +25,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.util.StreamUtils;
 
-public class UserControllerTests extends BaseControllerTest{
+public class UserControllerTests extends ControllerTestBase{
 
     @Value("classpath:nsahas_friends.json")
     private Resource nsahasFriendsResource;

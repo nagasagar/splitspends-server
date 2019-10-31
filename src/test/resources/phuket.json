@@ -1,0 +1,27 @@
+[ 
+   { 
+      "id":2010,
+      "name":"phuket",
+      "members":[ 
+         { 
+            "id":1004,
+            "name":"sneham",
+            "email":"sneham@gmail.com",
+            "imageUrl":null,
+            "emailVerified":false,
+            "provider":"local"
+         },
+         { 
+            "id":1001,
+            "name":"nsahas",
+            "email":"nsahas@gmail.com",
+            "imageUrl":null,
+            "emailVerified":false,
+            "provider":"local"
+         }
+      ],
+      "expenses":[ 
+
+      ]
+   }
+]

@@ -24,7 +24,6 @@ import com.dasa.splitspends.model.Group;
 import com.dasa.splitspends.model.User;
 import com.dasa.splitspends.repository.GroupRepository;
 import com.dasa.splitspends.repository.UserRepository;
-import com.dasa.splitspends.security.UserPrincipal;
 
 public class GroupControllerMockTests {
     Group g;

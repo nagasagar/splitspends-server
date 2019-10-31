@@ -19,7 +19,7 @@ public class GroupRepositoryTests extends BaseJPARepositoryTest{
 
    
     @Test
-    public void testGetUserByName() {
+    public void testGetGroupByName() {
 	Optional<Group> group = groupRepository.findByName("Prague");
 	assertTrue(group.isPresent());
 	assertThat(group.get().getMembers().size()).isEqualTo(2);
@@ -27,7 +27,7 @@ public class GroupRepositoryTests extends BaseJPARepositoryTest{
     
     
     @Test
-    public void testExistsByName() {
+    public void testGroupExistsByName() {
 	assertTrue(groupRepository.existsByName("Prague"));
 	assertFalse(groupRepository.existsByName("Barcelona"));
     }

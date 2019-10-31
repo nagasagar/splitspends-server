@@ -29,7 +29,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootTest(classes = { SpringSocialApplication.class, DBConfiguration.class })
 @ActiveProfiles("web")
 @AutoConfigureMockMvc
-public class BaseControllerTest {
+public class ControllerTestBase {
 	
 	String jwt;
 	
@@ -42,6 +42,8 @@ public class BaseControllerTest {
     User nsagar;
     User nsahas;
     User sirimm;
+    User nsanvi;
+    User sneham;
     
     @Before
     public void setUp() throws Exception {
@@ -49,6 +51,8 @@ public class BaseControllerTest {
 	nsagar = getUser(1002l);
 	nsahas = getUser(1001l);
 	sirimm = getUser(1003l);
+	sneham = getUser(1004l);
+	nsanvi = getUser(1008l);
     }
 
     private User getUser(Long id) throws Exception {
