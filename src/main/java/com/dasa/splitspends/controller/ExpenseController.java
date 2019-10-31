@@ -104,29 +104,23 @@ public class ExpenseController {
 	targetExpense.setGroup(expense.getGroup());
 	Set<Payment> payments = new HashSet<Payment>();
 	for(Payment p: expense.getPayments()) {
-	    if(p.getId()==null) {
 		Payment payment = new Payment();
 		payment.setAmount(p.getAmount());
 		payment.setExpense(targetExpense);
 		payment.setPayee(p.getPayee());
 		payments.add(paymentRepository.save(payment));
-	    }else {
 		payments.add(paymentRepository.save(p));
-	    }
 	    
 	}
 	targetExpense.getPayments().addAll(payments);
 	Set<Share> shares = new HashSet<Share>();
 	for(Share s: expense.getShares()) {
-	    if(s.getId()==null) {
 		Share share = new Share();
 		share.setAmount(s.getAmount());
 		share.setExpense(targetExpense);
 		share.setSpender(s.getSpender());
 		shares.add(shareRepository.save(share));
-	    }else {
 		shares.add(shareRepository.save(s));
-	    }
 	}
 	targetExpense.getShares().addAll(shares);
 	return expenseRepository.save(targetExpense);
