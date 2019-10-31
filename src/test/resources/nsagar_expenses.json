@@ -1,0 +1,310 @@
+[
+  {
+    "id": 9001,
+    "group": {
+      "id": 2009,
+      "name": "Iceland"
+    },
+    "detail": "beer",
+    "amount": 22,
+    "payments": [
+      {
+        "id": 4002,
+        "payee": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 11
+      },
+      {
+        "id": 4001,
+        "payee": {
+          "id": 1002,
+          "name": "nsagar",
+          "email": "nsagar@gmail.com"
+        },
+        "amount": 11
+      }
+    ],
+    "shares": [
+      {
+        "id": 5001,
+        "spender": {
+          "id": 1002,
+          "name": "nsagar",
+          "email": "nsagar@gmail.com"
+        },
+        "amount": 8
+      },
+      {
+        "id": 5002,
+        "spender": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 8
+      },
+      {
+        "id": 5003,
+        "spender": {
+          "id": 1015,
+          "name": "narasimha",
+          "email": "narasimha@gmail.com"
+        },
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "id": 9002,
+    "group": {
+      "id": 2009,
+      "name": "Iceland"
+    },
+    "detail": "fishNchips",
+    "amount": 18,
+    "payments": [
+      {
+        "id": 4003,
+        "payee": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 18
+      }
+    ],
+    "shares": [
+      {
+        "id": 5005,
+        "spender": {
+          "id": 1003,
+          "name": "sirimm",
+          "email": "sirimm@gmail.com"
+        },
+        "amount": 3
+      },
+      {
+        "id": 5004,
+        "spender": {
+          "id": 1002,
+          "name": "nsagar",
+          "email": "nsagar@gmail.com"
+        },
+        "amount": 3
+      },
+      {
+        "id": 5007,
+        "spender": {
+          "id": 1013,
+          "name": "kavyar",
+          "email": "kavyar@gmail.com"
+        },
+        "amount": 6
+      },
+      {
+        "id": 5006,
+        "spender": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 3
+      },
+      {
+        "id": 5008,
+        "spender": {
+          "id": 1015,
+          "name": "narasimha",
+          "email": "narasimha@gmail.com"
+        },
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": 9003,
+    "group": {
+      "id": 2009,
+      "name": "Iceland"
+    },
+    "detail": "chikenWings",
+    "amount": 15,
+    "payments": [
+      {
+        "id": 4004,
+        "payee": {
+          "id": 1013,
+          "name": "kavyar",
+          "email": "kavyar@gmail.com"
+        },
+        "amount": 10
+      },
+      {
+        "id": 4005,
+        "payee": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 5
+      }
+    ],
+    "shares": [
+      {
+        "id": 5010,
+        "spender": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 5
+      },
+      {
+        "id": 5009,
+        "spender": {
+          "id": 1002,
+          "name": "nsagar",
+          "email": "nsagar@gmail.com"
+        },
+        "amount": 5
+      },
+      {
+        "id": 5011,
+        "spender": {
+          "id": 1015,
+          "name": "narasimha",
+          "email": "narasimha@gmail.com"
+        },
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": 9004,
+    "group": {
+      "id": 2009,
+      "name": "Iceland"
+    },
+    "detail": "busTickets",
+    "amount": 28,
+    "payments": [
+      {
+        "id": 4006,
+        "payee": {
+          "id": 1015,
+          "name": "narasimha",
+          "email": "narasimha@gmail.com"
+        },
+        "amount": 28
+      }
+    ],
+    "shares": [
+      {
+        "id": 5012,
+        "spender": {
+          "id": 1002,
+          "name": "nsagar",
+          "email": "nsagar@gmail.com"
+        },
+        "amount": 5
+      },
+      {
+        "id": 5014,
+        "spender": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 5
+      },
+      {
+        "id": 5013,
+        "spender": {
+          "id": 1003,
+          "name": "sirimm",
+          "email": "sirimm@gmail.com"
+        },
+        "amount": 5
+      },
+      {
+        "id": 5016,
+        "spender": {
+          "id": 1015,
+          "name": "narasimha",
+          "email": "narasimha@gmail.com"
+        },
+        "amount": 8
+      },
+      {
+        "id": 5015,
+        "spender": {
+          "id": 1013,
+          "name": "kavyar",
+          "email": "kavyar@gmail.com"
+        },
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": 9005,
+    "group": {
+      "id": 2009,
+      "name": "Iceland"
+    },
+    "detail": "soveniers",
+    "amount": 32,
+    "payments": [
+      {
+        "id": 4007,
+        "payee": {
+          "id": 1003,
+          "name": "sirimm",
+          "email": "sirimm@gmail.com"
+        },
+        "amount": 32
+      }
+    ],
+    "shares": [
+      {
+        "id": 5020,
+        "spender": {
+          "id": 1015,
+          "name": "narasimha",
+          "email": "narasimha@gmail.com"
+        },
+        "amount": 8
+      },
+      {
+        "id": 5018,
+        "spender": {
+          "id": 1011,
+          "name": "babureddy",
+          "email": "babureddy@gmail.com"
+        },
+        "amount": 8
+      },
+      {
+        "id": 5017,
+        "spender": {
+          "id": 1002,
+          "name": "nsagar",
+          "email": "nsagar@gmail.com"
+        },
+        "amount": 8
+      },
+      {
+        "id": 5019,
+        "spender": {
+          "id": 1013,
+          "name": "kavyar",
+          "email": "kavyar@gmail.com"
+        },
+        "amount": 8
+      }
+    ]
+  }
+]

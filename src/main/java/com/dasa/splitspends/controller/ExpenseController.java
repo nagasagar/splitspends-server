@@ -109,7 +109,6 @@ public class ExpenseController {
 		payment.setExpense(targetExpense);
 		payment.setPayee(p.getPayee());
 		payments.add(paymentRepository.save(payment));
-		payments.add(paymentRepository.save(p));
 	    
 	}
 	targetExpense.getPayments().addAll(payments);
@@ -120,7 +119,6 @@ public class ExpenseController {
 		share.setExpense(targetExpense);
 		share.setSpender(s.getSpender());
 		shares.add(shareRepository.save(share));
-		shares.add(shareRepository.save(s));
 	}
 	targetExpense.getShares().addAll(shares);
 	return expenseRepository.save(targetExpense);

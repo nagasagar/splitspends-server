@@ -26,6 +26,7 @@ insert into friends(user_id,friend_id) values (1002,1010);
 insert into friends(user_id,friend_id) values (1002,1011);
 insert into friends(user_id,friend_id) values (1002,1013);
 insert into friends(user_id,friend_id) values (1002,1014);
+insert into friends(user_id,friend_id) values (1002,1015);
 /* sirimm -> sneham, sudaya, subram | nsagar */
 insert into friends(user_id,friend_id) values (1003,1004);
 insert into friends(user_id,friend_id) values (1003,1005);

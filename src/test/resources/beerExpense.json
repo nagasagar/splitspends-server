@@ -1,0 +1,58 @@
+{
+  "id": 9001,
+  "group": {
+    "id": 2009,
+    "name": "Iceland"
+  },
+  "detail": "beer",
+  "amount": 22,
+  "payments": [
+    {
+      "id": 4002,
+      "payee": {
+        "id": 1011,
+        "name": "babureddy",
+        "email": "babureddy@gmail.com"
+      },
+      "amount": 11
+    },
+    {
+      "id": 4001,
+      "payee": {
+        "id": 1002,
+        "name": "nsagar",
+        "email": "nsagar@gmail.com"
+      },
+      "amount": 11
+    }
+  ],
+  "shares": [
+    {
+      "id": 5003,
+      "spender": {
+        "id": 1015,
+        "name": "narasimha",
+        "email": "narasimha@gmail.com"
+      },
+      "amount": 6
+    },
+    {
+      "id": 5002,
+      "spender": {
+        "id": 1011,
+        "name": "babureddy",
+        "email": "babureddy@gmail.com"
+      },
+      "amount": 8
+    },
+    {
+      "id": 5001,
+      "spender": {
+        "id": 1002,
+        "name": "nsagar",
+        "email": "nsagar@gmail.com"
+      },
+      "amount": 8
+    }
+  ]
+}

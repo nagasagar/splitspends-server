@@ -63,7 +63,7 @@ public class ControllerTestBase {
 		return objectMapper.readValue(result.getResponse().getContentAsString(), User.class);
 	}
 
-	private String obtainAccessToken(String email, String password) throws Exception {
+	protected String obtainAccessToken(String email, String password) throws Exception {
 
 	LoginRequest loginRequest = new LoginRequest();
 	loginRequest.setEmail(email);
