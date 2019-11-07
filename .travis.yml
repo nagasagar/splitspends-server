@@ -1,0 +1,12 @@
+language: java
+jdk:
+  - openjdk8
+services:
+  - docker
+env:
+  global:
+    - secure: <encrypted_IMAGE_NAME>
+    - secure: TAkmTWOkvz7mgpf2TtcAOztpll7sIqa0WFf7MtYmstigs1Htq29mvQ+AxxkjDfsKiZKy8aX7lyggwtyQHI1zF1nDSBapO3pxLI9PmzqH05z6cU0M6KTiv/R1VAYya9EflNB54EHEpLi59+3O/EHtQWOh7qG+6aKvDgToJuEBEiAniHRwdvxxywvIaZN/c2yqjGwooHUrBasIU6Cn2kvLLVmLMyAGN79D3BG5mPR4WGpXyMWDuC+Kihf0zHf2T9/S58qc7YIpzol1b7TjNkmCnIPLjtm6L2jxQISEPd5gUv98iGfweF685lFrA25csOVS43Sy7oK5OudRZ0OOv0WqhMZuyPnANFQJkyEPWeayjJzGYFeGs90WxywRSAqA2nxdin14C/N4DydNCqGkjnRrG9P9fhx2HAhnvt6m6MojytjAOLWDNCF3ZxgMkxqMZvtntKhGbJAHMjd/nyAST9ZpcmHWCsg3U80kpUpSoLC9Mzxnf8Co7Z4nn7VhPmwrd6rHlpFIkxmUYR+w0kKgIH4J70koQFD2BYKtJUSCjeoFZGcTUChjL+Y7p14LwUUpUyQY3wRnDMz3a7omCJSQeQnPD0tHJxcZHmhr8jVY6Cu60GGLqb2cwdnfbJOcxUKZBMFpqGcdcLM7g/Ws0AsxHh0ILLLhH0ZLZeEF47CU5yrt64w=
+    - secure: <encrypted_DOCKER_USER>
+    - secure: <encrypted_DOCKER_PASSWORD>
+    - secure: <encrypted_TEAM_CHANNEL_URL>
