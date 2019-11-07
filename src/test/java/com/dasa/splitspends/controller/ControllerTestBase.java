@@ -19,14 +19,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 
-import com.dasa.splitspends.SpringSocialApplication;
+import com.dasa.splitspends.SplitspendsApplication;
 import com.dasa.splitspends.config.DBConfiguration;
 import com.dasa.splitspends.model.User;
 import com.dasa.splitspends.payload.LoginRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { SpringSocialApplication.class, DBConfiguration.class })
+@SpringBootTest(classes = { SplitspendsApplication.class, DBConfiguration.class })
 @ActiveProfiles("web")
 @AutoConfigureMockMvc
 public class ControllerTestBase {

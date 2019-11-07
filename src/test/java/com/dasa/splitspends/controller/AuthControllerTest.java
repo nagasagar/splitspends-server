@@ -21,7 +21,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.dasa.splitspends.SpringSocialApplication;
+import com.dasa.splitspends.SplitspendsApplication;
 import com.dasa.splitspends.config.DBConfiguration;
 import com.dasa.splitspends.payload.LoginRequest;
 import com.dasa.splitspends.payload.SignUpRequest;
@@ -29,7 +29,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { SpringSocialApplication.class, DBConfiguration.class })
+@SpringBootTest(classes = { SplitspendsApplication.class, DBConfiguration.class })
 @ActiveProfiles("web")
 @AutoConfigureMockMvc
 public class AuthControllerTest {

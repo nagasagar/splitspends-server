@@ -8,11 +8,11 @@ import com.dasa.splitspends.config.AppProperties;
 
 @SpringBootApplication
 @EnableConfigurationProperties(AppProperties.class)
-public class SpringSocialApplication {
+public class SplitspendsApplication {
     
     
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSocialApplication.class, args);
+		SpringApplication.run(SplitspendsApplication.class, args);
 	}
 }

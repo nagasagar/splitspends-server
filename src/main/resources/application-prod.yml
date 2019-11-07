@@ -6,9 +6,9 @@ logging:
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/splitspends_user?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-        username: root
-        password: splitspends
+        url: jdbc:mysql://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:splitspends}
+        username: ${RDS_USERNAME:splitspends}
+        password: ${RDS_PASSWORD:splitspends}
 
     jpa:
         show-sql: true
@@ -17,7 +17,7 @@ spring:
             naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
         properties:
             hibernate:
-                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+                dialect: org.hibernate.dialect.MySQL57Dialect
     security:
       oauth2:
         client:

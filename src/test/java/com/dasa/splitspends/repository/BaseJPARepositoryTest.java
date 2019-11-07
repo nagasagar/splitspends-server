@@ -6,12 +6,12 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.dasa.splitspends.SpringSocialApplication;
+import com.dasa.splitspends.SplitspendsApplication;
 import com.dasa.splitspends.config.DBConfiguration;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-@ContextConfiguration(classes= {SpringSocialApplication.class, DBConfiguration.class})
+@ContextConfiguration(classes= {SplitspendsApplication.class, DBConfiguration.class})
 @ActiveProfiles("jpa")
 public abstract class BaseJPARepositoryTest {
 }
