@@ -23,15 +23,15 @@ spring:
         client:
           registration:
             google:
-              clientId: 81319930206-j7m2caf12or4sfa1ptufmf47061lile4.apps.googleusercontent.com
-              clientSecret: HQs7xvA8x6LvjwR61VveoAyg
+              clientId: ${GOOGLE_APP_ID}
+              clientSecret: ${GOOGLE_APP_SECRET}
               redirectUriTemplate: '{baseUrl}/oauth2/callback/{registrationId}'
               scope:
                 - email
                 - profile
             facebook:
-              clientId: 933509166815194
-              clientSecret: d8a4363fca184032718a41e3a447c26f
+              clientId: ${FACEBOOK_APP_ID}
+              clientSecret: ${FACEBOOK_APP_SECRET}
               redirectUriTemplate: '{baseUrl}/oauth2/callback/{registrationId}'
               scope:
                 - email
@@ -43,7 +43,7 @@ spring:
               userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
 app:
   auth:
-    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenSecret: ${TOKEN_SECRET}
     tokenExpirationMsec: 864000000
   oauth2:
     # After successfully authenticating with the OAuth2 Provider,
