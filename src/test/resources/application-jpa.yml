@@ -1,9 +1,7 @@
 logging:
    level:
+      root: OFF
       org.springframework: OFF
-      org.springframework.security: OFF
-      org.hibernate.stat: OFF
-      org.hibernate.type: OFF
 
 spring:
     datasource:
@@ -26,7 +24,7 @@ spring:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL5InnoDBDialect
                 generate_statistics: false
-                format_sql: true
+                format_sql: false
     security:
       oauth2:
         client:

@@ -1,10 +1,9 @@
 logging:
+   file: splitspends-disabled-test-console.log
    level:
+      root: OFF
       org.springframework: OFF
-      org.springframework.security: OFF
-      org.hibernate.stat: OFF
-      org.hibernate.type: OFF
-
+      spring.test.mockmvc.print: none
 spring:
     datasource:
         driver-class-name: org.h2.Driver
@@ -26,7 +25,7 @@ spring:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL5InnoDBDialect
                 generate_statistics: false
-                format_sql: true
+                format_sql: false
     security:
       oauth2:
         client:

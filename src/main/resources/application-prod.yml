@@ -1,7 +1,7 @@
 logging:
    level:
-      org.springframework.security: ERROR
-      org.springframework.web: ERROR
+      root: OFF
+      org.springframework: OFF
 
 spring:
     datasource:
