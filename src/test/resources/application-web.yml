@@ -1,8 +1,9 @@
 logging:
    level:
-      org.springframework.security: DEBUG
-      org.hibernate.stat: DEBUG
-      org.hibernate.type: TRACE
+      org.springframework: OFF
+      org.springframework.security: OFF
+      org.hibernate.stat: OFF
+      org.hibernate.type: OFF
 
 spring:
     datasource:
@@ -17,7 +18,7 @@ spring:
           enabled: true
 
     jpa:
-        show-sql: true
+        show-sql: false
         hibernate:
             ddl-auto: update
             naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy

@@ -1,23 +1,23 @@
 logging:
    level:
-      org.springframework.security: DEBUG
-      org.springframework.web: DEBUG
+      org.springframework.security: ERROR
+      org.springframework.web: ERROR
 
 spring:
     datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:splitspends}
+        driver-class-name: ${RDS_DRIVER_CLASS:com.mysql.cj.jdbc.Driver}
+        url: jdbc:${RDS_DB_TYPE:mysql}://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:splitspends}
         username: ${RDS_USERNAME:splitspends}
         password: ${RDS_PASSWORD:splitspends}
 
     jpa:
-        show-sql: true
+        show-sql: false
         hibernate:
             ddl-auto: update
             naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
         properties:
             hibernate:
-                dialect: org.hibernate.dialect.MySQL57Dialect
+                dialect: ${RDS_DB_DIALECT:org.hibernate.dialect.MySQL57Dialect}
     security:
       oauth2:
         client:
