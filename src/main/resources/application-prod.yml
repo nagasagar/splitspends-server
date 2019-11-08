@@ -1,7 +1,7 @@
 logging:
    level:
-      org.springframework.security: DEBUG
-      org.springframework.web: DEBUG
+      org.springframework.security: ERROR
+      org.springframework.web: ERROR
 
 spring:
     datasource:
@@ -11,7 +11,7 @@ spring:
         password: ${RDS_PASSWORD:splitspends}
 
     jpa:
-        show-sql: true
+        show-sql: false
         hibernate:
             ddl-auto: update
             naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
