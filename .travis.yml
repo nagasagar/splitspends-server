@@ -12,11 +12,11 @@ env:
 before_install:
 - docker pull openjdk:8-jdk-alpine
 script:
-- mvn clean package
+- mvn clean package -DskipTests
 after_success:
 - export COMMIT=${TRAVIS_COMMIT::7}
 - export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG";else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
-- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 - docker-compose build
 - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
