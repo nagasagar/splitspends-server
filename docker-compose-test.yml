@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    image: nagasagar/splitspends-server-test
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    ports:
+      - "8080:8080"
+    container_name: splitspends-server-test

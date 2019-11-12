@@ -9,20 +9,25 @@ env:
   - secure: nspmaZe8CfVVwWgpxezLpCFDXqESHlgWJr1bXVvOeUu801P9Y1NxQKH6vpnlZLaMyZtW/eYownCFWN1JFv8X1EQybYtw3w8peY6pa9jI1Pkj1jhQmO30YDweynQHwlUKH2okgSk7uhwxzVIPqBWSeWGrbmW7fYYu/wjpHSKs43EmailMLacOR82LiseFc3QQN/0I71mXSRhz5nzIRn0DJY8ivXABSUixhHdhpP6y59mc6BLsasjImNC66mvvSFc4hs1BZGkm6cgvhPuDEyfRkKIlmiDNGeV7Vg4+KppSOT4R+55M5Xyj3jmJ7Yke9c0YMtKoLHOPZkABQ1BPmKTYRK06CEYRGz/UPV9Y6svZvq+CsnfOusNIw4/ZYEjFTiXUeYEva+K0/0zADDOM4hWgJB/gGt0A46xuSilK4puwT2P6WxZXuZwH4YWadlcLiRefzPebB2DpRW38eg6SYOn9h7ns09w8CilHUEg+9FyXBS/BM52NuFJuuSru1tvmHS2wBlxmCw/ieUHOD7Y9mRP8JGzZ37pwOYSjpDKjB0v8mmz3Y0t5gMEBHYXKXUZMuOgVFNydt9L8jbZ+y0WrtbP/ZgFyJOEbJuIRHPkx3XJr3GkzL56JhlFEvDADnq3JQK1twhJOzIgjsryLOy1N9R9XzeQTnzfujkjZRDhM/h3MPV0=
   - secure: Jd/UarbYG4MfqMRMV8cuzia6ImYSckar5z01bmVg2TtFEhZRwZbljDfKCurRjenXDVKC2+7UV5PXz3PDj1y9bkVYeJB5a46f3fQL8yOxXJwPTrt0muq0Wvxv+gyqfQQWnbH/niIbVoqg9VFqgapK1GY/Bbgpgp/iAj+iwb4V44+XAVvCqKQaR4RPamaZzt/l+a6M3KzylpzChc+JYutmxzEw8asWhZDH5o3g27nMBScuhQc/fwmLGKIT0XUkr/pZXME5tdO7jDBEkSqq62EE/UjTsQMoSvb3CG/4FIi+T/gZ5Aqre3qDENz2ofAdFtJviTLvih6XJvj+/ZLYbi9YIP0RbqJo75MbGzlWIBPNQ4NMtnskFvMOfHJ6xgbqtgayNGrb2vbr2FITMq5YbDKKkpibsl45ijkLi9AaoxBV5KePFmA/YyDUGOBBdFWv53zFXTzaV5vJO6JwLaSL8Wysz1EHVHkRhJLaODQxAVujnW9kzrHNOlE7EOrVg03xWTfBMZ7ISBv2hPNmj8Xt6bBW/t5+hg8M5GUt5TDWecz7f50IgYsL28usUvAm/U7K0y82S6ushU3scRqbNOzq7Igv+/1TcIlrhk9onrVYAuMETpplxU3wki8RaZmTDAELCopur1ZhWDqUil73fDBWQlKWgRP6ODi4knk76mHrYJFDiJk=
   - secure: FjM0TVE533E+xhnO06sEY3NxCAjV2y4MWH8jBGuG2f8iTpPmbZp7hUAQOn+1AECIaC5C1KX0x4at4qPCxDPeaxAxtiwyOncURtXmkL+05VWP6dPaoIESk2dLfb4KPKxGaw49unCIost/SuWJuOec8bho0GKs2rBmaJrX23Xy0ukKJ1eeJWPv6vfhsFlmrLIQH2evORXS+rd3rqzoO8mKSx2SxW6XShRN4gjChYuNdQSnPl3vDUEOrSxg4hAkUz39D3CDWZ19HkpZadb8481eGjA2XSAscaMOI16AkaC7hnnyLThODFEssnGPnK6J5BngfZde1/g/I7RZWB//ACII2cl49m9CAzS4v/mNxMi9Y+Tiy/xNtVyYViRkRm8Y59+sTKg9GqNVdeeaBwdVMH5Dnpzsg1+mMUPm9V9Il6pJkhT2TFv1T2KQob08duwrR34NkkJ90O7ALG1PxXh5vQwgOJ6CXC9a9xu8doRXs4Gs/zyWEE9MtAr7b/+nlDrvKAlHZriodW1aQvKtXmb+HfBvGEj8wqX6UVzvuBt8V/3AiLguXKdhDYK+G/ZjZ7tPIwgdHAwO9qwW2T2GRXBAYj+IM9fZTT4EvBcSCAdEv5iSE4KF36C8QRzatao+lwE5BgUw6urv+xcbGUkNMtLFrfZkZMtLKrV0LCTfVkynkcXh9ic=
+  - secure: Ls89IRVc9vxX5oGGdx9CZDsHJA4cSShmPWIhCMwyDT6ldLc41IeF98XGrLLKZHUxgUFEXDxihYKV5NxkcNkDwKgQ35rfjs6VQwyV+uaqrNdOqK7PxnLu2teMrXEniiqsdSXvBnOEKe14OoXjboVwAz0mrEf7MZQapBJncr7Ucw4DEPChxt6Qv0NmdcsSA4ED7Pz9R62MdHahMZ9VbpxibpUc0i4SB1WW7K7W3uK2rbwLMa0C9yNLJJwtN4Ug9VOKHy9BxhDgJ+gy+59BS7Ql0ywO2jV9EaxtKuBqer5j72LpvFGZcRg9Cfz+ZhifmwPgT/x3n0nuAhzwAVytaVAALRpdExZnxveKTAEzUg9LOEvIPSMr9Ox3MG0Qk783b1LbWBEXg4b7G7/MHwBYnyQogNMWiKEeWw5jXlaW3Y0EmRRtP4BEHsHEVy7xXNy6oysVQh5cEZ9b1DI55pcOLQ71MMWDHZBW48cpZYgcsReTRcTib5XiUdTE1BsBQbBHbbw+cQnbKnUOiebtbdN5rk1ec04T01LTdrnxfNP4NrmWZeJUQfxrvqQ4dh7RahAJTi+5v5vHS+kOH7/SzcvRsMxrjcAKZXH8Jsaew1WWgND0HYgdoxYkf1SjnfXRBrRu2AMySq2NeMcqkWmTL9EotsD8eEPezOUo6xrskhQOo+JZbZI=
 before_install:
 - docker pull openjdk:8-jdk-alpine
 script:
 - mvn clean package -DskipTests
 after_success:
 - export COMMIT=${TRAVIS_COMMIT::7}
-- export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG";else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
+- export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG";else echo "$TRAVIS_BRANCH--$COMMIT";
+  fi`
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 - docker-compose build
 - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
+- docker-compose --file docker-compose-test.yml build
+- docker tag $TEST_IMAGE_NAME:latest $TEST_IMAGE_NAME:$TAG
+- docker push $TEST_IMAGE_NAME
 deploy:
   provider: heroku
-  api_key: $HEROKU_API_KEY
+  api_key: "$HEROKU_API_KEY"
   app: splitspends
   on:
     repo: "$IMAGE_NAME"

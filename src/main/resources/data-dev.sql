@@ -26,6 +26,7 @@ insert into friends(user_id,friend_id) values (1002,1010);
 insert into friends(user_id,friend_id) values (1002,1011);
 insert into friends(user_id,friend_id) values (1002,1013);
 insert into friends(user_id,friend_id) values (1002,1014);
+insert into friends(user_id,friend_id) values (1002,1015);
 /* sirimm -> sneham, sudaya, subram | nsagar */
 insert into friends(user_id,friend_id) values (1003,1004);
 insert into friends(user_id,friend_id) values (1003,1005);
@@ -86,16 +87,16 @@ insert into expenses(id, amount, detail, author_id, group_id) values (9004, 28, 
 insert into expenses(id, amount, detail, author_id, group_id) values (9005, 32, 'soveniers', 1003, 2009);
 
 insert into payments(id, amount, expense_id, payee_id) values (4001, 11, 9001, 1002);
-insert into payments(id, amount, expense_id, payee_id) values (4002, 11, 9001, 1002);
+insert into payments(id, amount, expense_id, payee_id) values (4002, 11, 9001, 1011);
 
-insert into payments(id, amount, expense_id, payee_id) values (4003, 18, 9002, 1002);
+insert into payments(id, amount, expense_id, payee_id) values (4003, 18, 9002, 1011);
 
-insert into payments(id, amount, expense_id, payee_id) values (4004, 10, 9003, 1002);
-insert into payments(id, amount, expense_id, payee_id) values (4005, 5, 9003, 1002);
+insert into payments(id, amount, expense_id, payee_id) values (4004, 10, 9003, 1013);
+insert into payments(id, amount, expense_id, payee_id) values (4005, 5, 9003, 1011);
 
-insert into payments(id, amount, expense_id, payee_id) values (4006, 28, 9004, 1002);
+insert into payments(id, amount, expense_id, payee_id) values (4006, 28, 9004, 1015);
 
-insert into payments(id, amount, expense_id, payee_id) values (4007, 32, 9005, 1002);
+insert into payments(id, amount, expense_id, payee_id) values (4007, 32, 9005, 1003);
 
 insert into shares(id, amount, expense_id, spender_id) values (5001, 8, 9001, 1002);
 insert into shares(id, amount, expense_id, spender_id) values (5002, 8, 9001, 1011);
